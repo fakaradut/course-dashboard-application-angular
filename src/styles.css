@@ -1,1 +1,681 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Myriad-Pro-Regular;
+}
+
+@font-face {
+  font-family: Myriad-Pro-Regular;
+  src: url(./assets/font/MYRIADPRO-REGULAR.OTF);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+/*wrapper*/
+.grid {
+  font-size: 14px;
+  display: grid;
+  max-width: 100vw;
+  min-height: 100vh;
+  grid-template-columns: 1fr 2.5fr 2.5fr 2.5fr;
+  grid-template-rows: 56px 138px 5fr 5fr;
+}
+
+/*header part*/
+header.header {
+  grid-row: 1/2;
+  grid-column: 1/5;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 2.5fr 2.5fr 2.5fr;
+  max-width: 100vw;
+}
+
+header.header .top-left {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  display: inline-flex;
+  background-color: #2dcb71;
+  padding: 0px 2%;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 118px;
+}
+header.header .top-left .person-picture {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+header.header p.person-name {
+  color: #fff;
+  font-size: 12px;
+}
+.person-star {
+  vertical-align: text-bottom;
+  margin-left: 0.5rem;
+}
+
+header.header .top-right {
+  grid-row: 1/2;
+  grid-column: 2/5;
+  background-color: #ffffff;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px solid #ececec;
+}
+
+.begin img {
+  cursor: pointer;
+  align-self: center;
+}
+
+.begin img.profile,
+img.messages,
+img.annotations {
+  margin-left: 10%;
+}
+
+.begin .annotations-value {
+  width: 12px;
+  min-width: 12px;
+  height: 12px;
+  background-color: red;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  bottom: 0.5rem;
+  right: 0.3rem;
+  color: white;
+  text-align-last: center;
+}
+
+header.header .top-right .begin {
+  display: inherit;
+  align-self: center;
+  width: 15vw;
+}
+
+header.header .top-right .center {
+  display: inline-block;
+  align-self: center;
+  width: 15vw;
+}
+
+header.header .top-right .end {
+  display: inline-block;
+  align-self: center;
+  min-width: 7rem;
+  text-align: right;
+}
+
+.search-bar {
+  background-color: #ffffff;
+  background-image: url(./assets/images/search-bar-icon.fw.png);
+  background-repeat: no-repeat;
+  background-position: 100% center;
+
+  margin-top: 0.7em;
+
+  width: 7rem;
+  line-height: 30px;
+  border-radius: 50px;
+  border-color: transparent;
+  outline: none;
+  color: #95a5a6;
+}
+
+/*left sidebar*/
+.left-side-nav {
+  grid-row: 2/5;
+  grid-column: 1/2;
+  background-color: #33495d;
+  color: #8e9fa1;
+  min-width: 118px;
+}
+
+.left-side-nav .link {
+  padding: 1rem 0rem 0rem 1.5rem;
+}
+
+.left-side-nav .link img {
+  margin-right: 1rem;
+  vertical-align: super;
+}
+
+.left-side-nav .link span {
+  vertical-align: top;
+}
+.left-side-nav ul {
+  padding-top: 0.8rem;
+}
+.left-side-nav li {
+  margin: 0.15rem 0rem 0.2rem 0rem;
+}
+.left-side-nav li:hover {
+  background-color: #243341;
+  color: #ffffff;
+}
+
+/*person info and horizontal navbar*/
+section.info-nav {
+  grid-column: 2/5;
+  grid-row: 2/3;
+}
+
+section.info-nav .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 7rem;
+}
+
+section.info-nav .top .top-left {
+  margin: 0.7rem 0rem 0rem 3rem;
+}
+
+section.info-nav .top .top-left img {
+  max-width: 80px;
+  max-height: 80px;
+  margin-right: 1rem;
+}
+
+section.info-nav .top .top-left .person-infos {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 3.4rem;
+}
+section.info-nav .top .top-left .person-infos .person-name {
+  color: #2c3e50;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+section.info-nav .top .top-left .person-infos .person-occupation {
+  color: #7f8c8d;
+  margin: 0.2rem 0rem;
+}
+section.info-nav .top .top-left .person-infos .person-occupation img {
+  margin: 0rem 0.5rem;
+  vertical-align: middle;
+}
+section.info-nav .top .top-left .person-infos .person-occupation .learn-button {
+  color: #3498db;
+  cursor: pointer;
+}
+
+section.info-nav .top .top-left .person-infos .person-score {
+  color: #afb5bf;
+}
+
+section.info-nav .top .top-left .person-infos .person-score img {
+  vertical-align: text-bottom;
+  margin-right: 0.5rem;
+}
+
+section.info-nav .top .top-right {
+  margin: 2.5rem 2rem 0rem 0rem;
+}
+
+section.info-nav .top .top-right span.edit,
+span.logout {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: #7f8b8d;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+}
+section.info-nav .top .top-right img {
+  padding-top: 0.3rem;
+  padding-left: 0.4rem;
+}
+
+section.info-nav .top .top-right span.edit:hover,
+span.logout:hover {
+  background-color: #2dcb71;
+}
+
+section.info-nav .bottom {
+  padding-bottom: 0.5rem;
+}
+
+section.info-nav .bottom ul {
+  margin-left: 3rem;
+}
+
+section.info-nav .bottom ul li {
+  display: inline;
+  margin-right: 2rem;
+  padding-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+section.info-nav .bottom li:hover {
+  border-bottom: 5px solid #2dcb71;
+}
+
+/* display area*/
+main.display-area {
+  grid-column: 2/5;
+  grid-row: 3/5;
+  background-color: #ebeff1;
+  padding: 2rem 0rem 0rem 2rem;
+  display: inline-block;
+}
+/*Custom card general css*/
+main.display-area .card {
+  display: inline-block;
+  padding: 1rem;
+  width: 30%;
+  min-width: 20rem;
+}
+
+main.display-area .card .content-list span,
+p {
+  display: inline-block;
+}
+
+.card .nav {
+  justify-content: center;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.card .nav .nav-right {
+  color: gray;
+  background-color: #ebeff1;
+}
+
+.card .nav .nav-left,
+.nav-right {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0px;
+  width: 50%;
+}
+.card .nav .nav-left {
+  float: left;
+}
+
+.card .nav.nav-right {
+  float: right;
+}
+.card .nav .title-done,
+.title-undone {
+  font-size: 0.7rem;
+  padding-bottom: 0.5rem;
+}
+
+.card .nav .title-done-value,
+.title-undone-value {
+  display: inline-block;
+  font-size: 2.5rem;
+  align-self: center;
+}
+
+.card .nav {
+  font-weight: bold;
+}
+.card .nav {
+  color: #95a5a6;
+}
+.card main {
+  color: #7f8c8d;
+}
+.card main li:hover {
+  background-color: #f6f9fc;
+  border-left: 4px solid #8d43ad;
+  cursor: pointer;
+}
+.card main,
+footer {
+  background-color: #ffffff;
+  color: #2c3e50;
+}
+.card main,
+footer {
+  padding: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.card main ul li {
+  border-bottom: 1px solid #dee1e2;
+}
+.card .content-list .content {
+  padding: 0.5rem 0rem 0.7rem 1rem;
+}
+
+.card footer {
+  text-align: right;
+  padding: 0rem 0rem 0.5rem 0rem;
+}
+.card footer div {
+  display: inline-block;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.card footer img {
+  padding-right: 1rem;
+  vertical-align: bottom;
+  cursor: pointer;
+}
+/*Course card*/
+.card-course .nav .nav-left {
+  color: orange;
+}
+
+/*Question card*/
+.card-question .nav .nav-left {
+  color: #8e44ad;
+}
+
+.card-question .content span {
+  min-width: 2.6rem;
+}
+
+.card-question .content img {
+  vertical-align: middle;
+}
+.card-question .content p {
+  margin-left: 0.2rem;
+}
+
+/*Exam card*/
+.card-exam .nav .nav-left {
+  color: #19bb9b;
+}
+
+/*Statuc card*/
+.card-status {
+  background-color: #ffffff;
+  margin-left: 1rem;
+  width: 95%;
+  display: inline-grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 34.5% 65.5%;
+  margin-top: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+}
+
+/*Status card experience area (left side)*/
+.card-status section.experience-area {
+  border-right: 1px solid #dee1e2;
+  grid-row: 1/2;
+  grid-column: 1/2;
+  padding: 0rem 1rem 0rem 2rem;
+  min-width: 340px;
+}
+
+.card-status section.experience-area header {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.card-status .experience-area .bars .content {
+  margin: 0.5rem 2.2rem 0rem 0rem;
+}
+
+.card-status .experience-area .bars .result {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 1rem;
+  margin-right: 0rem;
+}
+
+.card-status .experience-area .bars .result .score {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: #2dcb71;
+  margin-bottom: 0.5rem;
+}
+
+.card-status .experience-area .bars .result .month {
+  font-size: 0.7rem;
+  text-align: right;
+}
+
+.card-status .experience-area main {
+  border-bottom: 2px solid #ebeff1;
+}
+
+.card-status .experience-area .graph .graph-title {
+  font-size: 1rem;
+}
+
+.card-status .experience-area .graph .experince-graph {
+  margin-top: 1rem;
+}
+
+/*Status card friend activity area (right side)*/
+.card-status section.friend-activity-area {
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+
+.card-status section.friend-activity-area header {
+  padding: 0.7rem 0rem 0.7rem 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bolder;
+  font-size: 1rem;
+  border-bottom: 1px solid #dee1e2;
+}
+
+.card-status .friend-activity-content {
+  padding: 0.5rem 1rem;
+}
+
+.card-status .friend-activity-content .separator {
+  margin: 0.5rem 0rem 0rem 0.7rem;
+  border-bottom: 1px solid #dee1e2;
+  height: 1px;
+}
+
+.card-status .friend-activity-content span {
+  position: relative;
+  bottom: 0.5rem;
+}
+.card-status .friend-activity-content .name {
+  color: #3498db;
+  margin-right: 0.7rem;
+}
+.card-status .friend-activity-content .date {
+  float: right;
+  position: relative;
+  top: 0.4rem;
+}
+
+.card-status .friend-activity-area footer {
+  padding-top: 0.3rem;
+  float: right;
+  color: #2c3e50;
+}
+.card-status .friend-activity-area img {
+  margin-left: 0.7rem;
+  padding-right: 0.7rem;
+  vertical-align: bottom;
+  margin-bottom: 0.6rem;
+}
+.card-status .friend-activity-area .content-list li:hover {
+  background-color: #f6f9fc;
+  border-left: 4px solid #8d43ad;
+}
+/*Custom experience bar css*/
+.bar {
+  justify-content: flex-end;
+  display: inline-grid;
+  background-color: #e9edf1;
+  height: 4rem;
+  width: 3rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80% 20%;
+}
+
+.bar-vertical {
+  grid-column: 1/2;
+  width: 100%;
+  background-color: #2dcb71;
+  display: inline-block;
+  grid-row: 1/2;
+  align-self: self-end;
+}
+
+.bar .title {
+  background-color: white;
+  font-size: 0.7rem;
+  text-align: center;
+}
+/* End bar css*/
+
+/*Custom bar with percentage*/
+.bar-percentage {
+  display: inline-flex;
+  flex-direction: column;
+  height: 1rem;
+  width: 1.5rem;
+  justify-content: flex-end;
+  align-content: center;
+  position: relative;
+  top: 1rem;
+}
+.bar-percentage .exam-bar {
+  display: inline-block;
+  background-color: #2dcb71;
+  width: 100%;
+}
+
+.card-exam .content-list .content .percentage {
+  position: relative;
+  right: 1.7rem;
+  bottom: 0.3rem;
+}
+/*End custom bar with percentage*/
+
+@media only screen and (max-width: 1350px) {
+  .card-status {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  .card-status .experience-area {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+  .card-status section.friend-activity-area {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  section.info-nav .bottom ul li {
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1183px) {
+  .left-side-nav .link {
+    padding: 1rem 0rem 0rem 2rem;
+  }
+  .left-side-nav .link img {
+    margin-right: 0.3rem;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .grid {
+    display: inline-block;
+  }
+  .header .top-right {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+  .left-side-nav {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  .info-nav {
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
+  .display-area {
+    grid-row: 4/5;
+    grid-column: 1/2;
+  }
+
+  section.info-nav .bottom ul li {
+    display: inline-block;
+    margin-bottom: 1rem;
+    margin-right: 0.5rem;
+  }
+  .card-status .friend-activity-content .date {
+    top: 0rem;
+  }
+  main.display-area {
+    padding: 0rem;
+  }
+  .left-side-nav ul {
+    text-align: center;
+  }
+  .left-side-nav ul li {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .top {
+    display: inline-flex;
+    flex-direction: column;
+  }
+  .top .top-left {
+    display: inherit;
+  }
+  .top .top-right {
+    margin: 1rem 0rem 0rem 0rem;
+  }
+  main.display-area {
+    padding: 0rem;
+  }
+  section.info-nav .top .top-left .person-infos {
+    display: inline-flex;
+    position: relative;
+    bottom: 0rem;
+  }
+  section.info-nav .top .top-left img {
+    max-width: 40px;
+    max-height: 40px;
+    margin-left: 0.3rem;
+  }
+  section.info-nav .top .top-left {
+    margin: 0.7rem 0rem 0rem 0rem;
+  }
+  .card-status section.experience-area {
+    min-width: auto;
+  }
+  .experince-graph img {
+    width: 200px;
+    height: 80px;
+  }
+  header.header .top-right .center {
+    width: fit-content;
+  }
+  header.header .top-left {
+    display: inline-block;
+    min-width: 60px;
+  }
+  main.display-area .card {
+    padding: 1rem 0rem 0rem 0rem;
+    width: 100%;
+  }
+  .card-status {
+    margin-left: 0rem;
+    width: 100%;
+  }
+}

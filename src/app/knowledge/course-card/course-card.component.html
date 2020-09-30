@@ -1,0 +1,13 @@
+ <!--Custom course Card-->
+ <div class="card-course card">
+  <header class="nav">
+   <span class="nav-left"><div class="title-done-value">{{cardInfo.titleDoneValue}}</div><div class="title-done">DONE COURSE</div></span>
+   <span class="nav-right"><div class="title-undone-value">{{cardInfo.titleUndoneValue}}</div><div class="title-undone">UNFINISHED COURSE</div></span></header>
+  <main class="content">
+    <ul class="content-list" *ngFor= "let content of cardListContent">
+    <li class="content"><p>{{content.content}}</p></li>
+</ul>
+  </main>
+  <footer><div class="show-more-link">Show more</div><img class="show-more-image" src="../../../assets/images/show-more.fw.png" alt=""></footer>
+</div>
+<!--End custom course Card-->

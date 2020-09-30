@@ -1,0 +1,27 @@
+<div class="card-status">
+  <!--Card experince area-->
+  <section class="experience-area">
+    <header class="title">Experience gained</header>
+    <main class="bars">
+      <span *ngFor="let bar of bar"><span class="bar content"><span class="bar-vertical" [style]="bar.value"></span><div class="title">{{bar.label}}</div></span></span>
+      <span class="result content"><span class="score">+{{score.score}}</span><span class="month">{{score.date}}</span></span>
+    </main>
+    <footer class="graph">
+      <span class="graph-title">Experince per day</span>
+      <div class="experince-graph">
+        <img src="../../../assets/images/graph.fw.png" alt="">
+      </div>
+    </footer>
+  </section>
+  <!--Card friend activity area-->
+  <section class="friend-activity-area">
+    <header class="friend-activity-title">FRIEND ACTIVITY</header>
+    <main class="content-list">
+      <ul *ngFor="let content of content">
+        <li class="friend-activity-content"><img [src]="content.pic" alt=""><span class="name">{{content.name}}
+        </span><span class="info-title">{{content.title}} <b style="color: #384A5E;">{{content.info}}</b></span><span class="date"><img src="" alt="">{{content.date}}</span><div class="separator"></div></li>
+      </ul>
+    </main>
+    <footer><span class="show-more-link">Show more</span><img class="show-more-image" src="../../../assets/images/show-more.fw.png" alt=""></footer>
+  </section>
+</div>
