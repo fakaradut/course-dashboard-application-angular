@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardModule } from './dashboard/dashboard.module'
-import { KnowledgeModule} from './knowledge/knowledge.module'
+import { LayoutModule } from './layout/layout.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -11,8 +11,9 @@ import { KnowledgeModule} from './knowledge/knowledge.module'
   ],
   imports: [
     BrowserModule,
-    DashboardModule,
-    KnowledgeModule
+    AppRoutingModule,
+    LayoutModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
